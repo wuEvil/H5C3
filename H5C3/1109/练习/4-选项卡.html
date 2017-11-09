@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#m div{
+				width: 200px;
+				height: 200px;
+				border: 2px solid seagreen;
+				display: none;
+				text-align: center;
+				line-height: 200px;
+			}
+			.act{
+				background: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="m">
+			<div id="m">
+				<button class="act">卡恩</button>
+				<button>卢克</button>
+				<button>二哈</button>
+				<div style="display: block;">
+					新闻
+				</div>
+				<div>
+					卢克
+				</div>
+				<div>
+					二话
+				</div>
+			</div>
+			<script type="text/javascript">
+				var odiv = document.getElementById("m")
+				var ab = odiv.getElementsByTagName("button")
+				var ad = odiv.getElementsByTagName("div")
+		for (var i = 0;i<ad.length;i++) {
+			ab[i].xx=i;
+			ab[i].onclick=function () {
+				for (var j=0;j<ad.length;j++) {
+					ab[j].className='';
+					ad[j].style.display="none"
+				}
+				this.className="act"
+				ad[this.xx].style.display="block"
+			}
+		}
+			
+			</script>
+	</body>
+
+</html>

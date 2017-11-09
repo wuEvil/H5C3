@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<img src="../../images/shuzi/0.png"/>
+			<img src="../../images/shuzi/0.png"/>
+			:
+			<img src="../../images/shuzi/0.png"/>
+			<img src="../../images/shuzi/0.png"/>
+			:
+			<img src="../../images/shuzi/0.png"/>
+			<img src="../../images/shuzi/0.png"/>
+		</div>
+		<script type="text/javascript">
+			var aImg = document.getElementsByTagName('img')
+			function Dtime () {
+				var oDate = new Date();
+				var s = fun(oDate.getHours())+'' + fun(oDate.getMinutes()) + fun(oDate.getSeconds());
+				for (var i = 0;i<s.length;i++) {
+					console.log(s[i])
+				}
+			}
+			Dtime();
+//			setInterval(Dtime,100000)
+			function fun (n) {
+				if (n<10) {
+					return "0"+n
+				}
+			}
+		</script>
+	</body>
+</html>

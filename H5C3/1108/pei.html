@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<style type="text/css">
+			#aud,#and{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background: red;
+				position: absolute;
+			}
+		</style>
+		<div id="aud">
+			
+		</div><div id="and">
+			
+		</div>
+		<script>
+			var r = 100;
+			var d = 0;
+			setInterval(function() {
+				document.getElementById("aud").style.left = r*Math.cos(Math.PI*d/180)+300+"px"
+				document.getElementById("aud").style.top = r*Math.sin(Math.PI*d/180)+200+"px"
+			
+				d += 10;
+			},50)
+			setInterval(function() {
+				document.getElementById("and").style.left = r*Math.cos(Math.PI*d/180)+100+"px"
+				document.getElementById("and").style.top = r*Math.sin(Math.PI*d/180)+50+"px"
+			
+				d += 10;
+			},50)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<input type="color" />
+
+		<style type="text/css">
+			li {
+				list-style: none;
+				width: 40px;
+				height: 20px;
+				background: darkorchid;
+				margin: 10px;
+				float: left;
+			}
+		</style>
+
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="ccc">
+			<audio id="aud" src=""></audio>
+		</div>
+
+		<script src="js/lib/jquery-3.2.1.js"></script>
+		<script>
+			$("input").change(function() {
+				$("body").css("background", $(this).val())
+			})
+
+			$(document).keydown(function(e) {
+				var i = e.keyCode - 48;
+				console.log(i)
+				var aud = document.getElementById("aud")
+
+				aud.setAttribute("src", "mp3/" + i + ".mp3")
+
+				aud.play()
+			})
+
+			$("li").mouseover(
+				function() {
+					var i = $(this).index() + 1
+					console.log(i)
+					$("li").css("background", "darkorchid")
+
+					$("li").eq(i - 1).css("background", "red")
+
+					var aud = document.getElementById("aud")
+
+					aud.setAttribute("src", "mp3/" + i + ".mp3")
+
+					aud.play()
+				}
+			)
+		</script>
+	</body>
+
+</html>
