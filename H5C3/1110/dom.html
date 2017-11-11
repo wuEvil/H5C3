@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid black;
+				background: blueviolet;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="o" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var oo = document.getElementById('o')
+
+			var ctx = oo.getContext("2d")
+			ctx.fillStyle = "#9ACD32";
+			ctx.strokeStyle = "purple";
+			
+			ctx.beginPath();  
+			ctx.moveTo(100,100);
+			function draw (c) {
+				ctx.arc(300,300,200,-0.5*Math.PI,c*(2*Math.PI)-Math.PI/2,false)
+				ctx.closePath();
+				ctx.fill()
+			}
+			
+			tt(0.5)
+			
+			var n = 0;
+			var time = null;
+			function tt (t) {
+				
+				time = setInterval(function(){
+					
+					if(n > t){
+						draw(t);
+						clearInterval(time);
+					}else{
+						 draw(n);
+						n+=0.005;
+					}
+				},50);
+				
+			}
+			
+		</script>
+	</body>
+</html>

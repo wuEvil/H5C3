@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		div div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+			display: none;
+			text-align: center;
+			line-height: 20px;
+		}
+		.active {
+			background: red;
+		}
+	</style>
+
+	<body>
+		<div id="and">
+			<button>萝莉</button>
+			<button>御姐</button>
+			<button>软妹</button>
+			<div style="display: block;">身娇腰柔易推倒 肤嫩眼大个子小 淡妆素服一样好 樱桃小口吃得少 有糖有饼就不吵 乖巧服从性格好 纯洁心思容易了 主动讨喜真灵巧 无毛乾净气味好 可爱幼齿推到饱 后背骑乘难逃跑</div>
+			<div>外表、身材、个性和气质上成熟的年轻女性类型，具备一些个性的高年龄层少女或青年女性（通常指18~20岁以上），身高通常160cm以上，C罩杯以上。她们给人以大姐姐的印象;温柔体贴，成熟稳重，能倾听别人的烦恼并微笑的给出自己的意见，很能治愈人心，具有包容力，时刻关怀别人，总是一副笑眯眯的样子，给人一种姐姐的感觉，也堪称原祖御姐</div>
+			<div>体格娇小柔弱、说话的声音纤细柔软、性格温驯的女孩子</div>
+
+		</div>
+	<script type="text/javascript">
+			
+			
+			function Tab(id){
+			 this.oDiv = document.getElementById(id);
+			 this.aInput = this.oDiv.getElementsByTagName("button");
+			 this.aDiv = this.oDiv.getElementsByTagName("div");
+			 
+			 this.xxx=0;
+			}
+			
+			Tab.prototype.init=function(){
+				var This = this;
+				for(var i=0;i<this.aInput.length;i++){
+					this.aInput[i].index = i;
+					this.aInput[i].onclick= function(){
+						console.log(this); //当前input
+						This.t1(this);
+					};
+				}
+				
+			}
+			Tab.prototype.t1 = function(obj){
+				//排他 对应
+					for(var j=0;j<this.aInput.length;j++){
+						this.aInput[j].className='';
+						this.aDiv[j].style.display='none';
+					}
+					obj.className="active";
+					this.aDiv[obj.index].style.display="block";
+			}
+			Tab.prototype.autoPlay = function(num){
+				
+				var self = this;
+				
+				setInterval(function(){
+					
+
+					if(self.xxx == self.aInput.length-1){
+						self.xxx = 0;
+					}else{
+						self.xxx++;
+					}
+					
+					for(var j=0;j<self.aInput.length;j++){
+						self.aInput[j].className='';
+						self.aDiv[j].style.display='none';
+					}
+					self.aInput[self.xxx].className="active";
+					self.aDiv[self.xxx].style.display="block";
+					
+				},num);
+			}
+			
+			
+			
+			
+			var tab = new Tab("and");
+			
+			tab.init();
+			tab.autoPlay("500");
+		</script>
+	
+	</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 79px;
+				height: 108px;
+				background: url(../../img/girl.png) no-repeat;
+				background-position: 0 -216px;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			function Gid(left, top, speed) {
+				this.left = left;
+				this.top = top;
+				this.speed = speed;
+				this.buzi = 0;
+				this.timer = null;
+				this.dom = null;
+				var thas = this;
+				
+				
+				this.init = function() {
+					var oDiv = document.createElement("div");
+					document.body.appendChild(oDiv);
+					this.dom = oDiv
+					oDiv.style.left = this.left + "px"
+					oDiv.style.top = this.top + "px"
+
+				}
+
+				this.xinzou = function() {
+
+					this.timer = setInterval(function() {
+						thas.left += 4;
+						thas.buzi++;
+						if(thas.buzi == 7) {
+							thas.buzi = 0;
+						}
+						if(thas.left >= 800) {
+							thas.die()
+						}
+						thas.dom.style.left = thas.left + 'px'
+						thas.dom.style.backgroundPosition = -79 * thas.buzi + "px -216px"
+					}, this.speed)
+
+				}
+
+				this.die = function() {
+					clearInterval(this.timer)
+					//document.body.removeChild(this.dom);
+					
+				}
+
+				this.init()
+				this.xinzou()
+			}
+			setInterval(function(){
+				new Gid(Math.random()*400,Math.random()*400,Math.random()*400)},100
+			)
+			
+			
+		</script>
+	</body>
+
+</html>

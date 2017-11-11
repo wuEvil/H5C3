@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid #000;
+				background: skyblue;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<canvas id="o" width="800" height="800"></canvas>
+
+		<script type="text/javascript">
+			var c = document.getElementById('o');
+			var ctx = c.getContext("2d")
+			timer()
+
+			function timer() {
+				
+				
+				var nd = new Date();
+				var h = nd.getHours();
+				var m = nd.getMinutes();
+				var s = nd.getSeconds();
+				var ho = h + m / 60;
+				var hou = h > 12 ? h - 12 : h;
+				
+				
+				ctx.clearRect(0, 0, 800, 800)
+				ctx.beginPath(); //开始绘制路径
+				ctx.lineWidth = 5; //设置笔触宽度
+				ctx.strokeStyle = "blue"; //笔触颜色
+				ctx.arc(300, 300, 200, 0, 7, false); 
+				ctx.stroke(); //绘图
+				ctx.closePath();
+				
+
+				for(var i = 0; i < 12; i++) {
+					ctx.save();
+					ctx.lineWidth = 7;
+					ctx.strokeStyle = "purple";
+
+					ctx.translate(300, 300);
+					ctx.rotate(i * 30 * Math.PI / 180);
+					ctx.beginPath();
+					ctx.moveTo(0, -170); //画线，从坐标0，-170
+					ctx.lineTo(0, -190); //到坐标0，-190
+					ctx.stroke();
+					ctx.closePath();
+
+					ctx.restore();
+				}
+					
+					for(var i = 0; i < 60; i++) {
+					ctx.save();
+					ctx.lineWidth = 5;
+					ctx.strokeStyle = "purple";
+
+					ctx.translate(300, 300);
+					ctx.rotate(i * 6 * Math.PI / 180);
+					ctx.beginPath();
+					ctx.moveTo(0, -180); //画线，从坐标0，-170
+					ctx.lineTo(0, -190); //到坐标0，-190
+					ctx.stroke();
+					ctx.closePath();
+
+					ctx.restore();
+				}
+					
+					
+					ctx.save();  
+				ctx.lineWidth = 7;
+				ctx.strokeStyle = "#000";
+				ctx.translate(300,300);  
+				ctx.rotate(ho*30*Math.PI/180);  
+				
+				ctx.beginPath();     
+				ctx.moveTo(0,-140);  
+				ctx.lineTo(0,10);  
+				ctx.stroke();
+				ctx.closePath();
+				
+				ctx.restore();  
+			
+		ctx.save();  
+				ctx.lineWidth = 5;
+				ctx.strokeStyle = "#222";
+				ctx.translate(300,300);  
+				ctx.rotate(m*6*Math.PI/180);  
+				
+				ctx.beginPath();     
+				ctx.moveTo(0,-160);  
+				ctx.lineTo(0,10);  
+				ctx.stroke();
+				ctx.closePath();
+				
+				ctx.restore();  
+			
+			
+					ctx.save();  
+				ctx.lineWidth = 3;
+				ctx.strokeStyle = "#444";
+				ctx.translate(300,300);  
+				ctx.rotate(s*6*Math.PI/180);  
+				
+				ctx.beginPath();     
+				ctx.moveTo(0,-170);  
+				ctx.lineTo(0,10);  
+				ctx.stroke();
+				ctx.closePath();
+				
+				ctx.restore();  
+			
+			ctx.beginPath();
+			ctx.strokeStyle = "blueviolet";
+			ctx.arc(300,300,2,0,7,false);
+			ctx.fillStyle = "#blueviolet";
+			ctx.fill();
+			ctx.stroke();
+			ctx.closePath();
+			
+			ctx.font = "20px 微软雅黑";
+			ctx.lineWidth = 2;
+			ctx.fillStyle = "purple";
+			ctx.fillText(h+':'+m+':'+s,265,370)
+			ctx.fillText("珍惜时间",265,390);
+
+			}
+			
+			setInterval(timer,1000)
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#go{
+				width: 200px;
+				height: 200px;
+				background: #200;
+				border: 1px solid #002;
+				position: relative;
+				margin: 100px;
+			}
+			#go p{
+				width: 20px;
+				height: 20px;
+				background: #f00;
+				border: 1px solid #0f0;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="go">
+			<p></p>
+		</div>
+		<script>
+			var oGo=document.getElementById("go");
+			var oP = document.getElementsByTagName("p")[0];
+			oP.onmousedown=function(event) {
+				var event = event|| window.event;
+				var deltaX = event.clientX - oP.offsetLeft;
+				var deltaY = event.clientY - oP.offsetTop;
+				
+				oGo.onmousemove  = function(event) {
+					var event = event || window.event;
+					var x = event.clientX - deltaX;
+					var y = event.clientY - deltaY;
+					
+					//范围
+					if(x < 0) x = 0;
+					if(y < 0) y = 0;
+					if(x > oGo.clientWidth - oP.clientWidth){
+						x = oGo.clientWidth - oP.clientWidth;
+					}
+					if( y > oGo.clientHeight - oP.clientHeight){
+						y = oGo.clientHeight - oP.clientHeight
+					}
+					
+					oP.style.left = x + "px";
+					oP.style.top = y + "px";
+					
+				}
+			}
+			document.onmouseup = function(){
+				oGo.onmousemove = null;
+			}
+			
+
+		</script>
+	</body>
+</html>

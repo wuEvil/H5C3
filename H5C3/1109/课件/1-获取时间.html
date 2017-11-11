@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="time">
+			<img src="../../1108/img/0.png"/>
+			<img src="../../1108/img/0.png"/>
+			:
+			<img src="../../1108/img/0.png"/>
+			<img src="../../1108/img/0.png"/>
+			:
+			<img src="../../1108/img/0.png"/>
+			<img src="../../1108/img/0.png"/>
+		</div>
+		<style type="text/css">
+			img{
+				width: 50px;
+			}
+			body{
+				font-size: 50px;
+			}
+		</style>
+		<script>
+			
+			
+//			console.log(oDate.getTime());
+			function newtime () {
+				var oDate = new Date();
+			var oImg = document.getElementsByTagName('img')
+			console.log(oDate);
+			console.log(oDate.getHours());
+			console.log(oDate.getMinutes());
+			console.log(oDate.getSeconds());
+				
+				var h = oDate.getHours(),
+				m = oDate.getMinutes(),
+				s = oDate.getSeconds();
+				var t = z(h) + z(m) + z(s);
+				for (var i=0;i<oImg.length;i++) {
+					oImg[i].src="../../1108/img/"+ t[i] + ".png"
+				}
+			}
+			
+			function z(a) {
+				if (a<10) {
+					return "0"+a
+				} else{
+					return ""+a
+				}
+			}
+			
+			setInterval(newtime,1000)
+			
+		</script>
+	</body>
+</html>

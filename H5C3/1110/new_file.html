@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<style type="text/css">
+			canvas {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="o" width="800" height="800">对自己浏览器没点数吗！！</canvas>
+
+		<script type="text/javascript">
+			var oo = document.getElementById('o')
+
+			var ctx = oo.getContext("2d")
+			ctx.fillStyle = "blue"
+			ctx.fillRect(100, 100, 100, 100)
+
+			ctx.strokeRect(200, 200, 200, 200)
+
+			ctx.beginPath()
+			ctx.moveTo(500, 100)
+			ctx.lineTo(500, 300)
+			ctx.lineTo(700, 300)
+			ctx.lineTo(700, 100)
+			ctx.closePath()
+			ctx.fillStyle = "#0000FF"
+			ctx.fill()
+			ctx.strokeStyle = "#2E8B57"
+			ctx.stroke()
+
+			ctx.beginPath()
+			ctx.arc(300, 500, 60, 1 * Math.PI, 0, false)
+			ctx.closePath()
+			ctx.fillStyle = "#0000FF"
+			ctx.fill()
+			ctx.strokeStyle = "#2E8B57"
+			ctx.stroke()
+				
+				
+				var img=new Image() ;img.src="../1108/day3/img/xiaoming.png"
+				img.onload=function() {
+					ctx.drawImage(img, 70, 20, 400, 400, 100, 100, 400, 400)
+				}
+//			var image = new Image();
+//			image.src = "../images/1.jpg";
+//			image.onload = function() {
+//				ctx.drawImage();
+//
+//			}
+				
+				var imgI = new Image();
+				imgI.src='lc.png';
+				imgI.onload=function() {
+					var buzi = 0;
+					var l = 0;
+					setInterval(function  () {
+						
+					},50)
+					
+				}
+				
+				
+				
+		</script>
+	</body>
+
+</html>

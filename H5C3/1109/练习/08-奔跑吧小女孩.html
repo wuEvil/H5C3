@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#gid{
+				width: 79px;
+				height: 108px;
+				background: url(../../img/girl.png) no-repeat;
+				background-position:0 -216px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="gid">
+			
+		</div>
+		
+		<script type="text/javascript">
+			 
+			 var oDiv = document.getElementById("gid");
+			 
+			 var newLeft = 0;
+			 var buzi = 0;
+			 
+			 setInterval(function() {
+			 	newLeft+=4;
+			 	buzi++;
+			 	if (buzi == 7) {
+			 		buzi = 0;
+			 	}
+			 	
+			 	oDiv.style.left = newLeft + 'px'
+			 	oDiv.style.backgroundPosition = -79 * buzi +"px -216px"
+			 },300)
+			 
+		</script>
+		
+	</body>
+</html>

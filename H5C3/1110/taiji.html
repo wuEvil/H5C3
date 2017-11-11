@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				border: 1px solid black;
+				background: blueviolet;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="o" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			var oo = document.getElementById('o')
+
+			var ctx = oo.getContext("2d")
+			
+			ctx.fillStyle="#fff";
+			ctx.beginPath();
+			ctx.arc(300,300,100,1.5*Math.PI,0.5*Math.PI,true);
+			ctx.closePath();
+			ctx.fill()
+			
+			
+			ctx.fillStyle="#000";
+			ctx.beginPath();
+			ctx.arc(300,300,100,1.5*Math.PI,0.5*Math.PI,false);
+			ctx.closePath();
+			ctx.fill()
+			
+			ctx.fillStyle="#000";
+			ctx.beginPath();
+			ctx.arc(300,250,50,2*Math.PI,0,false);
+			ctx.closePath();
+			ctx.fill()
+			
+			ctx.fillStyle="#fff";
+			ctx.beginPath();
+			ctx.arc(300,350,50,2*Math.PI,0,false);
+			ctx.closePath();
+			ctx.fill()
+			
+			ctx.fillStyle="#000";
+			ctx.beginPath();
+			ctx.arc(300,350,20,2*Math.PI,0,false);
+			ctx.closePath();
+			ctx.fill()
+			
+			ctx.fillStyle="#fff";
+			ctx.beginPath();
+			ctx.arc(300,250,20,2*Math.PI,0,false);
+			ctx.closePath();
+			ctx.fill()
+			
+			ctx.font="40px 微软雅黑";
+			ctx.fillText('你好，世界！',200,500)
+			setInterval()
+			
+		</script>
+	</body>
+</html>

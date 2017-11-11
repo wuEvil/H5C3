@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			canvas{
+				border: 1px solid #000;
+				background: skyblue;
+			}
+		</style>
+
+	</head>
+	<body>
+		<canvas id="o" width="800" height="800"></canvas>
+		
+		<script type="text/javascript">
+			var c = document.getElementById('o');
+			var ctx = c.getContext("2d")
+			
+			ctx.fillStyle= "#000"
+			ctx.beginPath();
+			ctx.arc(300,200,150,0.5*Math.PI,-0.5*Math.PI);
+			ctx.closePath();
+			ctx.arc(300,125,75,0,2*Math.PI,false);
+			ctx.closePath();
+//			ctx.arc(300,600,75,0,2*Math.PI,true);
+			ctx.fill();
+			
+			
+			ctx.fillStyle= "#fff"
+			ctx.beginPath();
+			ctx.arc(300,200,150,-0.5*Math.PI,0.5*Math.PI,false);
+			ctx.closePath();
+			ctx.arc(300,275,75,0,2*Math.PI);
+			ctx.closePath();
+			ctx.fill();
+			
+			
+		</script>
+	</body>
+</html>
