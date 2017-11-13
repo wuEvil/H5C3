@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+		<div class="aa"><img src="http://iph.href.lu/258x258" alt="" /></div>
+	</body>
+	<script src="../js/jquery-1.12.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var a = window.pagYoffset;
+		var i = 0;
+		var img = document.getElementsByTagName("img");
+		
+		$(document).mousewheel(function(a,e) {
+			
+			
+			if (i=>0&&i<=img.length-1) {
+				console.log(i)
+				img[i].src="baby.png";
+			}
+			i+=e;
+		}
+	)
+	</script>
+</html>
