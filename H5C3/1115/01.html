@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 50px;
+				height: 50px;
+				background: orchid;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</section>
+		<script src="../js/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("div:first-child").css("background","#9932CC")
+			$("div:nth-of-type(3n+2)").css("background","#800080");
+			$("div:first-child").parent("section").children().eq(4).css("background","red").siblings().html("不是我");
+		
+		$("<span></span>").html("span").appendTo("div");
+		
+		$("div:first-child").clone().appendTo("section");
+		
+		$("div").animate(
+				{
+					"background-color": "green",
+					"rotate": "500deg",
+					"translateZ" : "400px"
+				},
+				2000,
+				function(){
+					$(this).css("background","blue");
+				}
+			);
+
+		
+		</script>
+	</body>
+</html>

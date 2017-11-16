@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+@wid: 200px;
+@hei: 200px;
+.aa(){
+    border: 1px solid #000000;
+    background: #003EFF;
+}
+.a(){
+    background: #9932CC;
+}
+
+.aaa{
+    width: @wid;
+    height: @hei;
+    .aa;
+    &:hover{
+        .a;
+    }
+}

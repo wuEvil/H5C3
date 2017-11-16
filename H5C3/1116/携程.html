@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="cssreset-min.css"/>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<header>
+		<div class="soso">
+			<div class="soso_box">
+				<input type="text" name="" id="" placeholder="搜索你想要的" />
+			</div>
+			<div class="user">
+				<a href="#">我 的</a>
+			</div>
+		</div>
+		</header>
+		
+		<section class="banner">
+			
+		</section>
+		
+		<script type="text/javascript">
+			//获取元素
+			var banner = document.querySelector(".banner");
+			
+			setBanner();
+			
+			window.onresize = setBanner;
+			
+			function setBanner(){
+				
+				var bannerWidth = parseInt(getComputedStyle(banner)["width"]);
+				console.log(bannerWidth);
+				
+				 banner.style.height = bannerWidth / (750 / 150) + "px";
+				
+				
+			}
+		</script>
+
+	</body>
+</html>
